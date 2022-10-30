@@ -152,6 +152,7 @@ $(document).on("click" , ".delete-btn" , function(){
 });
 /* search */
 $("#search").on("keyup" , function(){
+    $("#load-table").empty();
     var search_term = $(this).val();
     $("#load-table").html("");
         $.ajax({
