@@ -12,6 +12,7 @@
     <tr>
       <td id="header">
         <h1>PHP REST API CRUD</h1>
+         <div id="loading-image" class="load"><img src="/32x32.gif" alt=""></div>
 
         <div id="search-bar">
           <label>Search :</label>
@@ -73,6 +74,7 @@
           <td></td>
           <td><input type="button" id="edit-submit" value="Update"></td>
         </tr>
+
       </table>
       </form>
       <div id="close-btn">X</div>

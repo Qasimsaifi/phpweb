@@ -20,7 +20,10 @@
                                     "</tr>");
           });
         }
-      }
+      },
+complete: function() {
+     $('#loading-image').hide();
+    }
     });
   }
 
@@ -152,6 +155,7 @@ $(document).on("click" , ".delete-btn" , function(){
 });
 /* search */
 $("#search").on("keyup" , function(){
+    $('#loading-image').show();
     $("#load-table").empty();
     var search_term = $(this).val();
     $("#load-table").html("");
@@ -175,7 +179,10 @@ $("#search").on("keyup" , function(){
               });
           }
 
-            }
+            },
+complete: function() {
+     $('#loading-image').hide();
+    }
         });
 })
  });
