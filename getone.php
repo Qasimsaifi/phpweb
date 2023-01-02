@@ -19,4 +19,11 @@ echo json_encode($output);
 echo json_encode(array('message' => 'No Record Found.', 'status' => false));
 
 }
+
+?>
+<script>
+    window.location='http://0.0.0.0:8080/auth.php';
+</script>
+<?php
+
 ?>

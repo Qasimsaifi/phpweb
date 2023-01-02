@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PHP REST API CRUD</title>
   <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
   <table id="main" border="0" cellspacing="0">
@@ -85,5 +86,24 @@
 <script type="text/javascript" src="jquery.js"></script>
 
 <script src="script.js"></script>
+    <button id="btn">Click</button>
+    <button id="cbtn">Clinnck</button>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"></script>
+    <script>
+    document.getElementById('cbtn').addEventListener('click', () => {
+        document.getElementById('dbtn').style.display = 'none'
+        document.getElementById('ubtn').style.display = 'none'
+    
+    })
+    document.getElementById('btn').addEventListener('click' , () =>{
+       let element = document.getElementById('table-data')
+       html2pdf(element) 
+        
+    })
+        
+    </script>
 </body>
 </html>

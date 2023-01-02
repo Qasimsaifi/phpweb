@@ -173,8 +173,8 @@ $("#search").on("keyup" , function(){
                       "<td>" + value.student_name + "</td>" +
                       "<td>" + value.age + "</td>" +
                       "<td>" + value.city + "</td>" +
-                      "<td><button class='edit-btn' data-eid='" + value.id + "'>Edit</button></td>" +
-                      "<td><button class='delete-btn' data-id='" + value.id + "'>Delete</button></td>" +
+                      "<td><button class='edit-btn' id='ubtn' data-eid='" + value.id + "'>Edit</button></td>" +
+                      "<td><button class='delete-btn' id='dbtn' data-id='" + value.id + "'>Delete</button></td>" +
                       "</tr>");
               });
           }
@@ -184,7 +184,28 @@ complete: function() {
      $('#loading-image').hide();
     }
         });
-})
+});
+  $(document).on("click", ".edit-btn", function() {
+      var studentId = $('#sid').val();
+      var obj = { sid: studentId };
+      var myJSON = JSON.stringify(obj);
+      $.ajax({
+          url: 'http://0.0.0.0:8080/getone.php',
+          type: "POST",
+          data: myJSON,
+          success: function(data) {
+console.log(data[0].student_name);
+if (data[0].student_name == $('#sname').val()) {
+   console.log('l9gn success') 
+   var php = '<?php session_start(); echo "yes"  ?>'
+   $('#field').html(php)
+}
+else{
+    console.log('faled')
+}
+          }
+      });
+  });
  });
  
   

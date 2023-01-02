@@ -11,7 +11,7 @@ $search_value = isset($_GET['search']) ? $_GET['search'] : die();
 /*$search_id = isset($_GET['id']) ? $_GET['id'] : die();*/
 include "config.php";
 
-$sql = "SELECT * FROM student WHERE student_name LIKE '%{$search_value}%'"; $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
+$sql = "SELECT * FROM student WHERE student_name LIKE '%{$search_value}%' OR id LIKE '%{$search_value}%' OR city LIKE '%{$search_value}%'"; $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 
 if(mysqli_num_rows($result) > 0) {
 
